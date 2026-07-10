@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Telos Foundation Years — The architecture of each child</title>
+<meta name="description" content="A foundation-years advisory designing the academic architecture of Grade 6–8 students, between the UAE and Kerala. Long-horizon planning, not admissions-season cramming.">
+<meta name="theme-color" content="#0B2130">
+<link rel="canonical" href="https://www.telosfoundationyears.com/">
+
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Telos Foundation Years">
+<meta property="og:title" content="Telos Foundation Years — The architecture of each child">
+<meta property="og:description" content="A foundation-years advisory for Grades 6–8. We plan the load-bearing years across a full academic horizon — between the UAE and Kerala.">
+<meta property="og:image" content="og-image.png">
+<meta property="og:url" content="https://www.telosfoundationyears.com/">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Telos Foundation Years — The architecture of each child">
+<meta name="twitter:description" content="A foundation-years advisory for Grades 6–8, between the UAE and Kerala.">
+<meta name="twitter:image" content="og-image.png">
+
+<!-- Favicon (inline, no extra file needed) -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230B2130'/><text x='16' y='23' font-family='Georgia,serif' font-size='20' fill='%23C5AC6E' text-anchor='middle'>T</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1D4C73;
+    --navy-deep:#123049;
+    --navy-deepest:#0B2130;
+    --peacock:#2D8A99;
+    --teal:#37C3B5;
+    --gold:#C5AC6E;
+    --gold-soft:#D8C494;
+    --paper:#EFF2F1;
+    --paper-2:#E7ECEB;
+    --ink:#0E212E;
+    --mist:#5B7382;
+    --line-on-dark:rgba(255,255,255,.14);
+    --serif:'Fraunces',Georgia,serif;
+    --sans:'Hanken Grotesk',system-ui,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
+    --maxw:1180px;
+    --ease:cubic-bezier(.2,.7,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--paper);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--teal);color:var(--navy-deepest)}
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 32px}
+
+  /* ---------- shared type devices ---------- */
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:11.5px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--peacock);
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:26px;height:1px;background:var(--gold);
+    display:inline-block;
+  }
+  .eyebrow.on-dark{color:var(--teal)}
+  .eyebrow.on-dark::before{background:var(--gold)}
+
+  h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:1.05}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,33,48,.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line-on-dark);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    height:66px;color:#fff;
+  }
+  .brand{display:flex;align-items:baseline;gap:12px}
+  .brand .mark{
+    font-family:var(--serif);font-size:22px;font-weight:500;
+    letter-spacing:.04em;color:#fff;
+  }
+  .brand .sub{
+    font-family:var(--mono);font-size:10px;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--teal);
+    border-left:1px solid var(--line-on-dark);padding-left:12px;
+  }
+  .navlinks{display:flex;align-items:center;gap:34px}
+  .navlinks a{
+    font-size:13.5px;color:rgba(255,255,255,.82);letter-spacing:.01em;
+    transition:color .25s var(--ease);
+  }
+  .navlinks a:hover{color:var(--teal)}
+  .btn{
+    font-family:var(--sans);font-size:13.5px;font-weight:600;
+    letter-spacing:.01em;cursor:pointer;border:none;
+    transition:transform .25s var(--ease),background .25s var(--ease),color .25s var(--ease);
+  }
+  .btn-gold{
+    background:var(--gold);color:var(--navy-deepest);
+    padding:11px 22px;border-radius:2px;
+  }
+  .btn-gold:hover{background:var(--gold-soft);transform:translateY(-1px)}
+  .btn-ghost{
+    background:transparent;color:#fff;padding:11px 22px;border-radius:2px;
+    border:1px solid var(--line-on-dark);
+  }
+  .btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
+  .menu-toggle{display:none;background:none;border:none;color:#fff;font-family:var(--mono);font-size:12px;letter-spacing:.15em;cursor:pointer}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;overflow:hidden;
+    background:
+      radial-gradient(120% 90% at 82% 8%, rgba(55,195,181,.10), transparent 55%),
+      linear-gradient(180deg,var(--navy) 0%, var(--navy-deep) 62%, var(--navy-deepest) 100%);
+    color:#fff;
+  }
+  .hero .wrap{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;
+    padding-top:96px;padding-bottom:104px;
+  }
+  .hero h1{
+    font-size:clamp(38px,5.6vw,72px);
+    letter-spacing:-.02em;margin:26px 0 0;
+  }
+  .hero h1 em{font-style:italic;color:var(--gold-soft)}
+  .hero .lead{
+    max-width:38ch;margin-top:26px;
+    font-size:17px;color:rgba(255,255,255,.78);line-height:1.65;
+  }
+  .hero .cta-row{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
+  .hero .foot-note{
+    margin-top:40px;display:flex;gap:26px;flex-wrap:wrap;
+    font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+    text-transform:uppercase;color:rgba(255,255,255,.5);
+  }
+  .hero .foot-note span{display:flex;align-items:center;gap:9px}
+  .hero .foot-note i{width:5px;height:5px;background:var(--teal);border-radius:50%;display:inline-block;font-style:normal}
+
+  /* elevation signature */
+  .elevation{position:relative;width:100%;height:420px}
+  .elevation svg{width:100%;height:100%;overflow:visible}
+  .datum{stroke:var(--line-on-dark);stroke-width:1}
+  .datum-live{stroke:var(--teal);stroke-width:1}
+  .tick{stroke:var(--gold);stroke-width:1.4}
+  .member{stroke:rgba(255,255,255,.10);stroke-width:1}
+  .lvl-label{font-family:var(--mono);font-size:9.2px;letter-spacing:.18em;fill:rgba(255,255,255,.62)}
+  .lvl-num{font-family:var(--mono);font-size:8px;letter-spacing:.1em;fill:var(--gold-soft)}
+  .draw{stroke-dasharray:520;stroke-dashoffset:520;animation:draw 1.5s var(--ease) forwards}
+  .draw.d2{animation-delay:.12s}
+  .draw.d3{animation-delay:.24s}
+  .draw.d4{animation-delay:.36s}
+  .draw.d5{animation-delay:.48s}
+  @keyframes draw{to{stroke-dashoffset:0}}
+
+  /* ---------- thesis ---------- */
+  .thesis{background:var(--paper);padding:104px 0}
+  .thesis .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
+  .thesis h2{font-size:clamp(28px,3.6vw,44px);color:var(--ink);max-width:16ch}
+  .thesis h2 em{font-style:italic;color:var(--peacock)}
+  .thesis .body p{color:#3a4b56;font-size:16.5px;margin-bottom:20px;max-width:52ch}
+  .thesis .body p:last-child{margin-bottom:0}
+  .rule-label{
+    font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--mist);display:block;margin-top:28px;
+    border-top:1px solid rgba(14,33,46,.15);padding-top:14px;
+  }
+
+  /* ---------- approach ---------- */
+  .approach{background:var(--navy-deepest);color:#fff;padding:104px 0}
+  .approach .head{max-width:640px;margin-bottom:56px}
+  .approach h2{font-size:clamp(28px,3.6vw,44px);margin-top:20px}
+  .approach h2 em{font-style:italic;color:var(--gold-soft)}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-on-dark);border:1px solid var(--line-on-dark)}
+  .card{background:var(--navy-deepest);padding:30px 26px 34px;position:relative;transition:background .3s var(--ease)}
+  .card:hover{background:var(--navy-deep)}
+  .card .idx{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--teal)}
+  .card h3{font-size:20px;margin:20px 0 12px;line-height:1.15}
+  .card p{font-size:14px;color:rgba(255,255,255,.66);line-height:1.6}
+  .card .bar{width:22px;height:2px;background:var(--gold);margin-top:22px}
+
+  /* ---------- engagements ---------- */
+  .engage{background:var(--paper-2);padding:104px 0}
+  .engage .head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:52px;flex-wrap:wrap}
+  .engage h2{font-size:clamp(28px,3.6vw,44px);color:var(--ink);max-width:14ch}
+  .engage .head p{color:var(--mist);max-width:34ch;font-size:15px}
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:end}
+  .tier{
+    background:#fff;border:1px solid rgba(14,33,46,.10);border-radius:3px;
+    padding:32px 30px;position:relative;overflow:hidden;
+    transition:transform .3s var(--ease),box-shadow .3s var(--ease);
+  }
+  .tier:hover{transform:translateY(-4px);box-shadow:0 22px 44px -26px rgba(11,33,48,.45)}
+  .tier .top{
+    height:6px;position:absolute;top:0;left:0;right:0;
+  }
+  .tier.t1 .top{background:var(--gold)}
+  .tier.t2 .top{background:var(--peacock)}
+  .tier.t3 .top{background:var(--teal)}
+  .tier .stage{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--mist);text-transform:uppercase}
+  .tier h3{font-size:24px;color:var(--ink);margin:14px 0 4px}
+  .tier .role{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--peacock);text-transform:uppercase;margin-bottom:16px}
+  .tier p{font-size:14.5px;color:#43535e;line-height:1.62}
+  .tier .h{font-size:24px}
+  /* ascending heights to read as structure */
+  .tier.t1{min-height:246px}
+  .tier.t2{min-height:280px}
+  .tier.t3{min-height:314px}
+
+  /* ---------- horizon ---------- */
+  .horizon{background:linear-gradient(180deg,var(--navy-deep),var(--navy));color:#fff;padding:96px 0 84px;overflow:hidden}
+  .horizon .head{max-width:560px;margin-bottom:44px}
+  .horizon h2{font-size:clamp(26px,3.4vw,40px);margin-top:18px}
+  .horizon h2 em{font-style:italic;color:var(--gold-soft)}
+  .horizon .band{width:100%;height:170px}
+  .horizon .band svg{width:100%;height:100%;overflow:visible}
+  .h-line{stroke:var(--line-on-dark);stroke-width:1}
+  .h-live{stroke:var(--teal);stroke-width:1.4}
+  .h-tick{stroke:var(--gold);stroke-width:1.4}
+  .h-label{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;fill:rgba(255,255,255,.66)}
+  .h-you{font-family:var(--mono);font-size:9px;letter-spacing:.1em;fill:var(--gold-soft)}
+
+  /* ---------- CTA band ---------- */
+  .cta{background:var(--gold);color:var(--navy-deepest);padding:78px 0}
+  .cta .wrap{display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+  .cta h2{font-size:clamp(26px,3.6vw,40px);max-width:18ch;color:var(--navy-deepest)}
+  .cta h2 em{font-style:italic}
+  .cta .btn-navy{background:var(--navy-deepest);color:#fff;padding:15px 30px;border-radius:2px;font-size:14.5px}
+  .cta .btn-navy:hover{background:var(--navy);transform:translateY(-1px)}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--navy-deepest);color:rgba(255,255,255,.7);padding:64px 0 40px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid var(--line-on-dark)}
+  .foot-brand .mark{font-family:var(--serif);font-size:24px;font-weight:500;letter-spacing:.04em;color:#fff}
+  .foot-brand p{margin-top:16px;font-size:14px;max-width:34ch;line-height:1.6}
+  .foot-col h4{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:18px;font-weight:500}
+  .foot-col a,.foot-col span{display:block;font-size:14px;margin-bottom:11px;color:rgba(255,255,255,.72);transition:color .2s var(--ease)}
+  .foot-col a:hover{color:var(--teal)}
+  .foot-base{display:flex;justify-content:space-between;align-items:center;padding-top:26px;flex-wrap:wrap;gap:14px}
+  .foot-base .fine{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:rgba(255,255,255,.42)}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:940px){
+    .navlinks{display:none}
+    .menu-toggle{display:block}
+    .hero .wrap{grid-template-columns:1fr;padding-top:64px;padding-bottom:72px}
+    .elevation{height:300px;order:-1}
+    .thesis .grid{grid-template-columns:1fr;gap:36px}
+    .cards{grid-template-columns:repeat(2,1fr)}
+    .tiers{grid-template-columns:1fr}
+    .tier.t1,.tier.t2,.tier.t3{min-height:auto}
+    .foot-grid{grid-template-columns:1fr;gap:32px}
+  }
+  @media(max-width:560px){
+    .wrap{padding:0 22px}
+    .cards{grid-template-columns:1fr}
+    .hero .btn{flex:1}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none}
+    .draw{stroke-dashoffset:0}
+  }
+  :focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <span class="mark">Telos</span>
+      <span class="sub">Foundation Years</span>
+    </div>
+    <nav class="navlinks">
+      <a href="#thesis">The Practice</a>
+      <a href="#approach">The Approach</a>
+      <a href="#engage">Engagements</a>
+      <a href="#begin" class="btn btn-gold">Begin</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Open menu">MENU</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="eyebrow on-dark">UAE&nbsp;·&nbsp;Kerala&nbsp;/&nbsp;Foundation-Years Advisory</span>
+      <h1>We design the<br><em>architecture</em> of<br>each child.</h1>
+      <p class="lead">Telos is a foundation-years advisory for Grades 6–8 — the load-bearing years, planned across a full academic horizon rather than a single admissions season.</p>
+      <div class="cta-row">
+        <a href="https://telosfy.systeme.io/telosmasterclass" class="btn btn-gold">Begin with a masterclass</a>
+        <a href="#approach" class="btn btn-ghost">See the approach</a>
+      </div>
+      <div class="foot-note">
+        <span><i></i>Grades 6–8</span>
+        <span><i></i>Long-horizon planning</span>
+        <span><i></i>One architecture per child</span>
+      </div>
+    </div>
+
+    <!-- SIGNATURE: developmental elevation drawing -->
+    <div class="elevation" aria-hidden="true">
+      <svg viewBox="0 0 420 420" preserveAspectRatio="xMidYMid meet">
+        <!-- vertical structural members -->
+        <line class="member" x1="70" y1="40" x2="70" y2="360"/>
+        <line class="member" x1="350" y1="40" x2="350" y2="360"/>
+        <line class="member" x1="210" y1="40" x2="210" y2="360" stroke-dasharray="2 6"/>
+
+        <!-- datum lines (developmental levels) rising to the horizon -->
+        <g>
+          <line class="datum draw"    x1="70" y1="330" x2="350" y2="330"/>
+          <line class="datum draw d2" x1="70" y1="272" x2="350" y2="272"/>
+          <line class="datum draw d3" x1="70" y1="214" x2="350" y2="214"/>
+          <line class="datum-live draw d4" x1="70" y1="140" x2="350" y2="140"/>
+          <line class="datum draw d5" x1="70" y1="72"  x2="350" y2="72" stroke-dasharray="3 5"/>
+        </g>
+
+        <!-- horizon marker -->
+        <line class="tick" x1="70" y1="72" x2="70" y2="66"/>
+        <line class="tick" x1="350" y1="72" x2="350" y2="66"/>
+
+        <!-- level ticks on left -->
+        <line class="tick" x1="66" y1="330" x2="74" y2="330"/>
+        <line class="tick" x1="66" y1="272" x2="74" y2="272"/>
+        <line class="tick" x1="66" y1="214" x2="74" y2="214"/>
+        <line class="tick" x1="64" y1="140" x2="76" y2="140"/>
+
+        <!-- labels -->
+        <text class="lvl-num" x="356" y="333">FDN</text>
+        <text class="lvl-label" x="356" y="275">GRADE 6</text>
+        <text class="lvl-label" x="356" y="217">GRADE 7</text>
+        <text class="lvl-label" x="356" y="143">GRADE 8</text>
+        <text class="lvl-label" x="356" y="75">HORIZON</text>
+
+        <!-- foundation hatch -->
+        <g stroke="var(--gold)" stroke-width="1" opacity=".5">
+          <line x1="90" y1="360" x2="110" y2="340"/>
+          <line x1="120" y1="360" x2="140" y2="340"/>
+          <line x1="150" y1="360" x2="170" y2="340"/>
+          <line x1="180" y1="360" x2="200" y2="340"/>
+          <line x1="210" y1="360" x2="230" y2="340"/>
+          <line x1="240" y1="360" x2="260" y2="340"/>
+          <line x1="270" y1="360" x2="290" y2="340"/>
+          <line x1="300" y1="360" x2="320" y2="340"/>
+        </g>
+        <line class="datum" x1="70" y1="360" x2="350" y2="360"/>
+
+        <!-- "you are here" node on grade 8 line -->
+        <circle cx="210" cy="140" r="4" fill="var(--teal)"/>
+        <text class="lvl-num" x="196" y="128" text-anchor="end">TODAY</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- THESIS -->
+<section class="thesis" id="thesis">
+  <div class="wrap grid">
+    <div class="reveal">
+      <span class="eyebrow">Why foundation years</span>
+      <h2>Most support arrives at the deadline. We arrive at the <em>drawing board</em>.</h2>
+    </div>
+    <div class="body reveal">
+      <p>By the time a family reaches an admissions consultant, the structure is already set. The choices that shaped it were made years earlier — in the foundation years, when the architecture was still being drawn.</p>
+      <p>Telos works in those years. We plan the arc of a child's academic life the way an architect plans a building: from the ground up, to a horizon, so that everything built later rests on something considered — and something that holds.</p>
+      <p>This is not tutoring, and it is not a stage of admissions. It is the design work that comes before either becomes urgent.</p>
+      <span class="rule-label">Grades 6–8 · Between the UAE and Kerala</span>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="approach" id="approach">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow on-dark">The approach</span>
+      <h2>Four principles that <em>hold the structure up</em>.</h2>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <span class="idx">01</span>
+        <h3>Long horizon, not next term</h3>
+        <p>We plan to the full arc of the foundation years, not to the nearest test. Short-term gains that don't compound aren't gains.</p>
+        <div class="bar"></div>
+      </div>
+      <div class="card reveal">
+        <span class="idx">02</span>
+        <h3>Structure before speed</h3>
+        <p>Foundations first. The advanced work a child reaches later is only as strong as the frame it stands on.</p>
+        <div class="bar"></div>
+      </div>
+      <div class="card reveal">
+        <span class="idx">03</span>
+        <h3>Evidence, made visible</h3>
+        <p>Progress a family can see. Feedback that shows a child where they stand and what the next move is — not a grade in isolation.</p>
+        <div class="bar"></div>
+      </div>
+      <div class="card reveal">
+        <span class="idx">04</span>
+        <h3>One architecture per child</h3>
+        <p>No template. Every plan is drawn for a single child, their strengths, and the horizon they're building toward.</p>
+        <div class="bar"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENTS -->
+<section class="engage" id="engage">
+  <div class="wrap">
+    <div class="head">
+      <div class="reveal">
+        <span class="eyebrow">Engagements</span>
+        <h2>Three ways to work with Telos.</h2>
+      </div>
+      <p class="reveal">Each engagement builds on the one before it — from first conversation to sustained oversight across the foundation years.</p>
+    </div>
+    <div class="tiers">
+      <div class="tier t1 reveal">
+        <div class="top"></div>
+        <span class="stage">Stage 01</span>
+        <h3>Masterclass</h3>
+        <span class="role">The drawing board</span>
+        <p>An open session where families meet the approach — an hour that reframes how the foundation years are planned. The place to begin.</p>
+      </div>
+      <div class="tier t2 reveal">
+        <div class="top"></div>
+        <span class="stage">Stage 02</span>
+        <h3>Strategic Audit</h3>
+        <span class="role">The survey</span>
+        <p>A close reading of where a child stands today and where the architecture needs support — a considered assessment of the ground before anything is built on it.</p>
+      </div>
+      <div class="tier t3 reveal">
+        <div class="top"></div>
+        <span class="stage">Stage 03</span>
+        <h3>Cohort Retainer</h3>
+        <span class="role">The build</span>
+        <p>Ongoing architectural oversight across the foundation years — sustained, individual guidance as the structure goes up, term after term.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HORIZON -->
+<section class="horizon">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow on-dark">The long view</span>
+      <h2>From where a child stands today to the <em>horizon</em> they're building toward.</h2>
+    </div>
+    <div class="band reveal" aria-hidden="true">
+      <svg viewBox="0 0 1100 170" preserveAspectRatio="none">
+        <!-- base datum -->
+        <line class="h-line" x1="0" y1="150" x2="1100" y2="150"/>
+        <!-- rising path -->
+        <line class="h-live" x1="90" y1="132" x2="1010" y2="40"/>
+        <!-- station ticks -->
+        <g>
+          <line class="h-tick" x1="90"  y1="150" x2="90"  y2="126"/>
+          <line class="h-tick" x1="320" y1="150" x2="320" y2="112"/>
+          <line class="h-tick" x1="550" y1="150" x2="550" y2="98"/>
+          <line class="h-tick" x1="780" y1="150" x2="780" y2="70"/>
+          <line class="h-tick" x1="1010" y1="150" x2="1010" y2="42"/>
+        </g>
+        <!-- nodes -->
+        <circle cx="90"  cy="132" r="4.5" fill="var(--gold-soft)"/>
+        <circle cx="320" cy="112" r="4" fill="var(--teal)"/>
+        <circle cx="550" cy="98" r="4" fill="var(--teal)"/>
+        <circle cx="780" cy="70" r="4" fill="var(--teal)"/>
+        <circle cx="1010" cy="40" r="5" fill="var(--gold)"/>
+        <!-- labels -->
+        <text class="h-you" x="90" y="168" text-anchor="middle">TODAY</text>
+        <text class="h-label" x="320" y="168" text-anchor="middle">GRADE 6</text>
+        <text class="h-label" x="550" y="168" text-anchor="middle">GRADE 8</text>
+        <text class="h-label" x="780" y="168" text-anchor="middle">SENIOR SCHOOL</text>
+        <text class="h-label" x="1010" y="168" text-anchor="middle">UNIVERSITY</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="begin">
+  <div class="wrap">
+    <h2>Every architecture begins with a <em>conversation</em>.</h2>
+    <a href="https://telosfy.systeme.io/telosmasterclass" class="btn btn-navy">Begin with a masterclass</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="mark">Telos</span>
+        <p>A foundation-years advisory designing the academic architecture of Grade 6–8 students, between the UAE and Kerala.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Practice</h4>
+        <a href="#thesis">The Practice</a>
+        <a href="#approach">The Approach</a>
+        <a href="#engage">Engagements</a>
+        <a href="#begin">Begin</a>
+      </div>
+      <div class="foot-col">
+        <h4>Connect</h4>
+        <a href="https://instagram.com/telosfoundationyears">Instagram</a>
+        <span>United Arab Emirates</span>
+        <span>Kerala, India</span>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span class="fine">© 2026 TELOS FOUNDATION YEARS</span>
+      <span class="fine">THE ARCHITECTURE OF EACH CHILD</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal (respects reduced motion via CSS)
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
