@@ -60,11 +60,11 @@
     height:100vh;height:100dvh;
     display:flex;flex-direction:column;overflow:hidden;
   }
-  main{flex:1 1 auto;overflow-y:auto;overflow-x:hidden;position:relative;width:100%}
+  main{flex:1 1 auto;overflow:hidden;position:relative;width:100%}
   .panel{display:none}
   .panel.active{
     display:flex;flex-direction:column;justify-content:center;align-items:center;
-    min-height:100%;width:100%;
+    height:100%;width:100%;overflow:hidden;
     animation:panelIn .45s var(--ease);
   }
   @keyframes panelIn{from{opacity:0}to{opacity:1}}
@@ -306,6 +306,9 @@
     .reveal{opacity:1;transform:none}
     .draw{stroke-dashoffset:0}
   }
+  /* compact panels so content fits a single screen */
+  section.panel{padding-top:22px;padding-bottom:22px}
+  section.hero.panel .wrap{padding-top:22px;padding-bottom:22px}
   :focus-visible{outline:2px solid var(--teal);outline-offset:3px}
 </style>
 <noscript><style>
@@ -579,10 +582,22 @@
     header.classList.remove('open');
     if(toggle){ toggle.textContent='MENU'; toggle.setAttribute('aria-expanded','false'); }
   }
+  function isPanel(id){ const el=document.getElementById(id); return el && el.classList.contains('panel'); }
 
-  function isPanel(id){
-    const el = document.getElementById(id);
-    return el && el.classList.contains('panel');
+  // Scale the active panel's content down until it fits one screen — guarantees zero scroll, no clipping.
+  function fit(){
+    const panel = document.querySelector('.panel.active');
+    if(!panel || !main) return;
+    const wrap = panel.querySelector('.wrap');
+    if(!wrap) return;
+    wrap.style.transform = 'none';
+    const availH = main.clientHeight;
+    const needH = wrap.offsetHeight; // layout height, ignores transform
+    if(needH > availH && needH > 0){
+      const s = Math.max(0.5, availH / needH);
+      wrap.style.transformOrigin = 'center center';
+      wrap.style.transform = 'scale(' + s.toFixed(4) + ')';
+    }
   }
 
   function show(id, push){
@@ -591,12 +606,11 @@
     document.querySelectorAll('.navlinks a.tab').forEach(t=>{
       t.setAttribute('aria-selected', t.getAttribute('data-panel')===id ? 'true' : 'false');
     });
-    if(main) main.scrollTop = 0;
     if(push && ('#'+id) !== location.hash){ history.pushState(null, '', '#'+id); }
     closeMenu();
+    requestAnimationFrame(fit);
   }
 
-  // tab bar, hero button, and footer links all switch panels
   triggers.forEach(t=>{
     t.addEventListener('click', function(e){
       const id = t.getAttribute('data-panel');
@@ -604,7 +618,6 @@
     });
   });
 
-  // mobile menu open/close
   if(toggle){
     toggle.addEventListener('click', ()=>{
       const open = header.classList.toggle('open');
@@ -613,11 +626,15 @@
     });
   }
 
-  // browser back/forward
   window.addEventListener('popstate', ()=> show((location.hash || '#home').slice(1), false));
 
-  // initial view (supports direct links like .../#approach)
+  let rt;
+  window.addEventListener('resize', ()=>{ clearTimeout(rt); rt = setTimeout(fit, 120); });
+
   show((location.hash || '#home').slice(1), false);
+  window.addEventListener('load', fit);
+  setTimeout(fit, 200); setTimeout(fit, 700);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(fit); }
 })();
 </script>
 </body>
