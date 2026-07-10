@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- TELOS BUILD: locked-v4 · 2026-07-10 · single screen, zero scroll. If the live site scrolls, THIS file is not the one deployed. -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -50,7 +51,7 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  html,body{height:100%}
+  html,body{height:100%;overscroll-behavior:none}
   body{
     font-family:var(--sans);
     color:var(--ink);
@@ -58,6 +59,7 @@
     -webkit-font-smoothing:antialiased;
     line-height:1.55;
     height:100vh;height:100dvh;
+    position:fixed;inset:0;width:100%;
     display:flex;flex-direction:column;overflow:hidden;
   }
   main{flex:1 1 auto;overflow:hidden;position:relative;width:100%}
@@ -287,13 +289,14 @@
     .navlinks a{padding:14px 32px;font-size:15px;color:rgba(255,255,255,.9)}
     .navlinks a.btn-gold{margin:12px 32px 4px;text-align:center}
     .menu-toggle{display:block}
-    .hero .wrap{grid-template-columns:1fr;padding-top:64px;padding-bottom:72px}
-    .elevation{height:300px;order:-1}
+    .hero .wrap{grid-template-columns:1fr;padding-top:16px;padding-bottom:16px}
+    .elevation{display:none}
     .thesis .grid{grid-template-columns:1fr;gap:36px}
     .cards{grid-template-columns:repeat(2,1fr)}
     .tiers{grid-template-columns:1fr}
     .tier.t1,.tier.t2,.tier.t3{min-height:auto}
-    .foot-grid{grid-template-columns:1fr;gap:32px}
+    .foot-grid{display:none}
+    footer{padding:12px 0 10px}
   }
   @media(max-width:560px){
     .wrap{padding:0 22px}
