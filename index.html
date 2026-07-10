@@ -6,21 +6,21 @@
 <title>Telos Foundation Years — The architecture of each child</title>
 <meta name="description" content="A foundation-years advisory designing the academic architecture of Grade 6–8 students, between the UAE and Kerala. Long-horizon planning, not admissions-season cramming.">
 <meta name="theme-color" content="#0B2130">
-<link rel="canonical" href="https://www.telosfoundationyears.com/">
+<link rel="canonical" href="https://telos-website-9qe.pages.dev/">
 
 <!-- Open Graph / social sharing -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Telos Foundation Years">
 <meta property="og:title" content="Telos Foundation Years — The architecture of each child">
 <meta property="og:description" content="A foundation-years advisory for Grades 6–8. We plan the load-bearing years across a full academic horizon — between the UAE and Kerala.">
-<meta property="og:image" content="og-image.png">
-<meta property="og:url" content="https://www.telosfoundationyears.com/">
+<meta property="og:image" content="https://telos-website-9qe.pages.dev/og-image.png">
+<meta property="og:url" content="https://telos-website-9qe.pages.dev/">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Telos Foundation Years — The architecture of each child">
 <meta name="twitter:description" content="A foundation-years advisory for Grades 6–8, between the UAE and Kerala.">
-<meta name="twitter:image" content="og-image.png">
+<meta name="twitter:image" content="https://telos-website-9qe.pages.dev/og-image.png">
 
 <!-- Favicon (inline, no extra file needed) -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230B2130'/><text x='16' y='23' font-family='Georgia,serif' font-size='20' fill='%23C5AC6E' text-anchor='middle'>T</text></svg>">
@@ -50,13 +50,24 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
+  html,body{height:100%}
   body{
     font-family:var(--sans);
     color:var(--ink);
     background:var(--paper);
     -webkit-font-smoothing:antialiased;
     line-height:1.55;
+    height:100vh;height:100dvh;
+    display:flex;flex-direction:column;overflow:hidden;
   }
+  main{flex:1 1 auto;overflow-y:auto;overflow-x:hidden;position:relative;width:100%}
+  .panel{display:none}
+  .panel.active{
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    min-height:100%;width:100%;
+    animation:panelIn .45s var(--ease);
+  }
+  @keyframes panelIn{from{opacity:0}to{opacity:1}}
   a{color:inherit;text-decoration:none}
   ::selection{background:var(--teal);color:var(--navy-deepest)}
   .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 32px}
@@ -109,6 +120,9 @@
     transition:color .25s var(--ease);
   }
   .navlinks a:hover{color:var(--teal)}
+  .navlinks a.tab{position:relative;cursor:pointer;padding-bottom:5px}
+  .navlinks a.tab[aria-selected="true"]{color:var(--teal)}
+  .navlinks a.tab[aria-selected="true"]::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--teal)}
   .btn{
     font-family:var(--sans);font-size:13.5px;font-weight:600;
     letter-spacing:.01em;cursor:pointer;border:none;
@@ -248,7 +262,7 @@
   .cta .btn-navy:hover{background:var(--navy);transform:translateY(-1px)}
 
   /* ---------- footer ---------- */
-  footer{background:var(--navy-deepest);color:rgba(255,255,255,.7);padding:64px 0 40px}
+  footer{background:var(--navy-deepest);color:rgba(255,255,255,.7);padding:34px 0 26px}
   .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid var(--line-on-dark)}
   .foot-brand .mark{font-family:var(--serif);font-size:24px;font-weight:500;letter-spacing:.04em;color:#fff}
   .foot-brand p{margin-top:16px;font-size:14px;max-width:34ch;line-height:1.6}
@@ -259,12 +273,19 @@
   .foot-base .fine{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:rgba(255,255,255,.42)}
 
   /* ---------- reveal ---------- */
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-  .reveal.in{opacity:1;transform:none}
+  .reveal{opacity:1;transform:none}
 
   /* ---------- responsive ---------- */
   @media(max-width:940px){
-    .navlinks{display:none}
+    .navlinks{
+      display:none;position:absolute;top:66px;left:0;right:0;
+      flex-direction:column;align-items:stretch;gap:0;
+      background:rgba(11,33,48,.98);backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line-on-dark);padding:6px 0 14px;
+    }
+    header.open .navlinks{display:flex}
+    .navlinks a{padding:14px 32px;font-size:15px;color:rgba(255,255,255,.9)}
+    .navlinks a.btn-gold{margin:12px 32px 4px;text-align:center}
     .menu-toggle{display:block}
     .hero .wrap{grid-template-columns:1fr;padding-top:64px;padding-bottom:72px}
     .elevation{height:300px;order:-1}
@@ -287,6 +308,11 @@
   }
   :focus-visible{outline:2px solid var(--teal);outline-offset:3px}
 </style>
+<noscript><style>
+  .panel{display:block!important}
+  body{height:auto;overflow:auto}
+  main{overflow:visible}
+</style></noscript>
 </head>
 <body>
 
@@ -297,18 +323,22 @@
       <span class="mark">Telos</span>
       <span class="sub">Foundation Years</span>
     </div>
-    <nav class="navlinks">
-      <a href="#thesis">The Practice</a>
-      <a href="#approach">The Approach</a>
-      <a href="#engage">Engagements</a>
-      <a href="#begin" class="btn btn-gold">Begin</a>
+    <nav class="navlinks" role="tablist" aria-label="Primary">
+      <a href="#home" class="tab" data-panel="home" role="tab">Home</a>
+      <a href="#thesis" class="tab" data-panel="thesis" role="tab">The Practice</a>
+      <a href="#approach" class="tab" data-panel="approach" role="tab">The Approach</a>
+      <a href="#engage" class="tab" data-panel="engage" role="tab">Engagements</a>
+      <a href="#longview" class="tab" data-panel="longview" role="tab">The Long View</a>
+      <a href="https://telosfy.systeme.io/telosmasterclass" class="btn btn-gold">Begin</a>
     </nav>
-    <button class="menu-toggle" aria-label="Open menu">MENU</button>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">MENU</button>
   </div>
 </header>
 
+<main>
+
 <!-- HERO -->
-<section class="hero">
+<section class="hero panel active" id="home" role="tabpanel">
   <div class="wrap">
     <div class="hero-copy">
       <span class="eyebrow on-dark">UAE&nbsp;·&nbsp;Kerala&nbsp;/&nbsp;Foundation-Years Advisory</span>
@@ -316,7 +346,7 @@
       <p class="lead">Telos is a foundation-years advisory for Grades 6–8 — the load-bearing years, planned across a full academic horizon rather than a single admissions season.</p>
       <div class="cta-row">
         <a href="https://telosfy.systeme.io/telosmasterclass" class="btn btn-gold">Begin with a masterclass</a>
-        <a href="#approach" class="btn btn-ghost">See the approach</a>
+        <a href="#approach" class="btn btn-ghost" data-panel="approach">See the approach</a>
       </div>
       <div class="foot-note">
         <span><i></i>Grades 6–8</span>
@@ -381,7 +411,7 @@
 </section>
 
 <!-- THESIS -->
-<section class="thesis" id="thesis">
+<section class="thesis panel" id="thesis" role="tabpanel">
   <div class="wrap grid">
     <div class="reveal">
       <span class="eyebrow">Why foundation years</span>
@@ -397,7 +427,7 @@
 </section>
 
 <!-- APPROACH -->
-<section class="approach" id="approach">
+<section class="approach panel" id="approach" role="tabpanel">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow on-dark">The approach</span>
@@ -433,7 +463,7 @@
 </section>
 
 <!-- ENGAGEMENTS -->
-<section class="engage" id="engage">
+<section class="engage panel" id="engage" role="tabpanel">
   <div class="wrap">
     <div class="head">
       <div class="reveal">
@@ -469,7 +499,7 @@
 </section>
 
 <!-- HORIZON -->
-<section class="horizon">
+<section class="horizon panel" id="longview" role="tabpanel">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow on-dark">The long view</span>
@@ -506,13 +536,7 @@
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta" id="begin">
-  <div class="wrap">
-    <h2>Every architecture begins with a <em>conversation</em>.</h2>
-    <a href="https://telosfy.systeme.io/telosmasterclass" class="btn btn-navy">Begin with a masterclass</a>
-  </div>
-</section>
+</main>
 
 <!-- FOOTER -->
 <footer>
@@ -524,10 +548,10 @@
       </div>
       <div class="foot-col">
         <h4>Practice</h4>
-        <a href="#thesis">The Practice</a>
-        <a href="#approach">The Approach</a>
-        <a href="#engage">Engagements</a>
-        <a href="#begin">Begin</a>
+        <a href="#thesis" class="tab" data-panel="thesis">The Practice</a>
+        <a href="#approach" class="tab" data-panel="approach">The Approach</a>
+        <a href="#engage" class="tab" data-panel="engage">Engagements</a>
+        <a href="https://telosfy.systeme.io/telosmasterclass">Begin</a>
       </div>
       <div class="foot-col">
         <h4>Connect</h4>
@@ -544,11 +568,57 @@
 </footer>
 
 <script>
-  // scroll reveal (respects reduced motion via CSS)
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
-  },{threshold:.15});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+(function(){
+  const panels = Array.from(document.querySelectorAll('.panel'));
+  const triggers = Array.from(document.querySelectorAll('[data-panel]'));
+  const header = document.querySelector('header');
+  const toggle = document.querySelector('.menu-toggle');
+  const main = document.querySelector('main');
+
+  function closeMenu(){
+    header.classList.remove('open');
+    if(toggle){ toggle.textContent='MENU'; toggle.setAttribute('aria-expanded','false'); }
+  }
+
+  function isPanel(id){
+    const el = document.getElementById(id);
+    return el && el.classList.contains('panel');
+  }
+
+  function show(id, push){
+    if(!isPanel(id)) id = 'home';
+    panels.forEach(p=> p.classList.toggle('active', p.id===id));
+    document.querySelectorAll('.navlinks a.tab').forEach(t=>{
+      t.setAttribute('aria-selected', t.getAttribute('data-panel')===id ? 'true' : 'false');
+    });
+    if(main) main.scrollTop = 0;
+    if(push && ('#'+id) !== location.hash){ history.pushState(null, '', '#'+id); }
+    closeMenu();
+  }
+
+  // tab bar, hero button, and footer links all switch panels
+  triggers.forEach(t=>{
+    t.addEventListener('click', function(e){
+      const id = t.getAttribute('data-panel');
+      if(isPanel(id)){ e.preventDefault(); show(id, true); }
+    });
+  });
+
+  // mobile menu open/close
+  if(toggle){
+    toggle.addEventListener('click', ()=>{
+      const open = header.classList.toggle('open');
+      toggle.textContent = open ? 'CLOSE' : 'MENU';
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  // browser back/forward
+  window.addEventListener('popstate', ()=> show((location.hash || '#home').slice(1), false));
+
+  // initial view (supports direct links like .../#approach)
+  show((location.hash || '#home').slice(1), false);
+})();
 </script>
 </body>
 </html>
