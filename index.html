@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<!-- TELOS BUILD: editorial-v5 · 2026-11-26 · scrolling one-pager, no JavaScript. -->
+<!-- TELOS BUILD: editorial-v6 (audit waves 1–2) · 2026-11-26 · scrolling one-pager, no JavaScript. -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Telos Foundation Years — The architecture of each child</title>
-<meta name="description" content="An education and advisory practice for the foundation years. One child, one architecture, planned across a full academic horizon.">
+<meta name="description" content="Thoughtful academic planning, starting at age eight. A boutique education and advisory practice for families in Dubai and worldwide — coaching inside your child's British, IB, or American curriculum, planned across a full academic horizon.">
 <meta name="theme-color" content="#0E1E3A">
 <link rel="canonical" href="https://telosfy.net/">
 
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Telos Foundation Years">
 <meta property="og:title" content="Telos Foundation Years — The architecture of each child">
-<meta property="og:description" content="An education and advisory practice for the foundation years. One child, one architecture, planned across a full academic horizon.">
+<meta property="og:description" content="Thoughtful academic planning, starting at age eight. Coaching inside your child's curriculum, planned across a full academic horizon.">
 <meta property="og:image" content="https://telosfy.net/og-image.png">
 <meta property="og:url" content="https://telosfy.net/">
 
@@ -64,7 +64,7 @@
   section,footer,#practice,#approach,#vanj,#engagements,#questions{scroll-margin-top:92px}
   .nav{display:flex;align-items:baseline;gap:16px 28px;padding-top:22px;padding-bottom:22px;flex-wrap:wrap}
   .wordmark{font-family:var(--serif);font-size:23px;font-weight:520;color:var(--navy);text-decoration:none;margin-right:auto}
-  .wordmark small{font-family:var(--sans);font-size:13px;font-weight:500;color:var(--muted);margin-left:10px}
+  .wordmark small{font-family:var(--sans);font-size:13px;font-weight:500;color:var(--muted);margin-left:12px;padding-left:12px;border-left:1px solid var(--line)}
   .nav a.link{font-size:15px;color:var(--muted);text-decoration:none}
   .nav a.link:hover{color:var(--navy)}
   .btn{
@@ -73,16 +73,20 @@
     padding:11px 22px;border-radius:2px;text-decoration:none;
   }
   .btn:hover{background:#B8934E}
-  .btn-mobile{display:none}
+  .btn-nav{font-size:14px;padding:9px 18px}
 
   /* ---------- hero ---------- */
-  .hero{padding:88px 0 76px;border-bottom:1px solid var(--line)}
+  .hero{padding:80px 0 72px;border-bottom:1px solid var(--line)}
   .hero .cols{display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:center}
-  .hero h1{font-size:clamp(42px,6vw,76px)}
-  .hero .lead{margin-top:26px;font-size:19px;color:var(--muted);line-height:1.6}
-  .hero .cta-row{margin-top:36px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+  .hero .eyebrow{font-family:var(--sans);font-size:12.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+  .hero h1{font-size:clamp(40px,5.4vw,66px)}
+  .hero .lead{margin-top:24px;font-size:18.5px;color:var(--muted);line-height:1.62}
+  .hero .cta-row{margin-top:34px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
   .hero .cta-row .quiet{font-size:15px;color:var(--muted);text-decoration-color:var(--gold)}
-  .hero .session-note{margin-top:18px;font-size:14px;color:var(--muted)}
+  .session-block{margin-top:26px;border-left:2px solid var(--gold);padding:4px 0 4px 18px;font-size:14.5px;color:var(--muted)}
+  .session-block strong{display:block;font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin-bottom:4px}
+  .session-block .srow{display:block;margin-top:5px;max-width:58ch}
+  .session-block b{color:var(--navy);font-weight:600}
 
   .hero-photo .photo-frame{aspect-ratio:4/5;border:1px solid var(--line);border-radius:2px;overflow:hidden;background:var(--ivory-2)}
   .hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
@@ -91,20 +95,43 @@
   section{padding:88px 0}
   section + section{border-top:1px solid var(--line)}
   #approach,#questions{background:var(--ivory-2)}
-  h2{font-size:clamp(30px,3.6vw,44px);max-width:22ch;margin-bottom:34px}
+  #practice,#engagements{background:#FBF9F3}
+  h2{font-size:clamp(30px,3.6vw,44px);max-width:24ch;margin-bottom:34px}
   .prose p + p{margin-top:18px}
   .prose .emph{font-family:var(--serif);font-size:21px;color:var(--navy);line-height:1.45}
 
-  /* ---------- approach ---------- */
-  .principles{margin-top:8px}
-  .principle{
-    display:grid;grid-template-columns:260px 1fr;gap:28px;
-    padding:26px 0;border-top:1px solid var(--line);
-  }
-  .principle:last-of-type{border-bottom:1px solid var(--line)}
-  .principle h3{font-size:23px}
-  .principle p{color:var(--ink)}
-  .method-note{margin-top:30px;font-size:15px;color:var(--muted);max-width:62ch}
+  /* ---------- practice: split + trajectories + ages ---------- */
+  .practice-cols{display:grid;grid-template-columns:11fr 9fr;gap:56px;align-items:start}
+  .practice-cols .prose{min-width:0}
+  .traj-card{background:#fff;border:1px solid var(--line);border-radius:3px;padding:26px 26px 20px}
+  .traj-card h3{font-size:19px;margin-bottom:4px}
+  .traj-card .sub{font-size:13.5px;color:var(--muted);margin-bottom:14px}
+  .traj-row{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:12px 0;border-top:1px dashed var(--line)}
+  .traj-row span{font-size:14.5px}
+  .dots{display:flex;gap:6px;flex-shrink:0}
+  .dots i{width:9px;height:9px;border-radius:50%;background:var(--gold)}
+  .traj-total{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+  .traj-cap{margin-top:14px;font-size:13.5px;color:var(--muted)}
+  .ages{margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:3px;overflow:hidden;background:#fff}
+  .age{padding:20px 22px;border-left:1px solid var(--line)}
+  .age:first-child{border-left:none}
+  .age b{display:block;font-family:var(--serif);font-weight:520;font-size:17.5px;color:var(--navy);margin-bottom:4px}
+  .age span{font-size:14px;color:var(--muted)}
+
+  /* ---------- approach: 2x2 grid + science + portfolio ---------- */
+  .principles{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .principle{background:#FCFBF7;border:1px solid var(--line);border-radius:3px;padding:24px 26px}
+  .principle h3{font-size:21px;margin-bottom:10px}
+  .principle p{color:var(--ink);font-size:15.5px}
+  .science{margin-top:34px;display:grid;grid-template-columns:3fr 2fr;gap:24px;align-items:stretch}
+  .sci-panel{border-left:2px solid var(--gold);background:#FCFBF7;padding:24px 28px}
+  .sci-panel h3{font-size:19px;margin-bottom:10px}
+  .sci-panel p{font-size:15.5px}
+  .pf-card{background:#fff;border:1px solid var(--line);border-radius:3px;padding:22px 24px}
+  .pf-card .tag{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .pf-card h3{font-size:18px;margin:6px 0 10px}
+  .pf-line{font-size:14px;padding:9px 0;border-top:1px dashed var(--line)}
+  .pf-line b{color:var(--navy);font-weight:600}
 
   /* ---------- founder ---------- */
   .founder{background:var(--navy);color:var(--ivory);border-top:none}
@@ -118,21 +145,23 @@
   .founder .sig-cred{margin-top:8px;font-family:var(--sans);font-size:13.5px;letter-spacing:.02em;color:rgba(245,241,232,.6)}
   .founder .signature{font-size:30px;margin-top:26px}
   .portrait{position:relative;margin:0}
-  .portrait::before{content:"";position:absolute;inset:0;transform:translate(-11px,11px);border:1px solid rgba(201,165,95,.5);border-radius:5px}
+  .portrait::before{content:"";position:absolute;inset:28px 0 0 0;transform:translate(-11px,11px);border:1px solid rgba(201,165,95,.5);border-radius:5px}
   .portrait img{position:relative;width:100%;height:auto;display:block;border-radius:5px}
 
-  /* ---------- engagements ---------- */
-  .stage{
-    display:grid;grid-template-columns:120px 260px 1fr;gap:28px;
-    padding:30px 0;border-top:1px solid var(--line);
-  }
-  .stage:last-of-type{border-bottom:1px solid var(--line)}
-  .stage .num{font-family:var(--serif);font-size:38px;color:var(--gold);line-height:1}
-  .stage h3{font-size:24px}
-  .stage .role{display:block;font-family:var(--serif);font-style:italic;font-size:16px;color:var(--muted);margin-top:6px}
-  .stage .act{margin-top:16px}
-  .fees-note{margin-top:28px;font-size:15px;color:var(--muted)}
-  .fees-note a{color:inherit;text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
+  /* ---------- engagements: three cards ---------- */
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .tier{background:#fff;border:1px solid var(--line);border-radius:3px;padding:26px 26px 24px;display:flex;flex-direction:column}
+  .tier .lvl{font-size:11.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+  .tier h3{font-size:21px;margin:8px 0 6px}
+  .tier .when{font-size:13.5px;color:var(--muted)}
+  .tier .deliv{list-style:none;margin:16px 0 22px;padding:0}
+  .tier .deliv li{font-size:14.5px;line-height:1.5;padding:8px 0 8px 18px;position:relative;border-top:1px dashed var(--line)}
+  .tier .deliv li::before{content:"";position:absolute;left:0;top:15px;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+  .tier .act{margin-top:auto}
+  .btn-ghost{display:inline-block;border:1px solid var(--navy);color:var(--navy);font-family:var(--sans);font-weight:600;font-size:14.5px;padding:10px 20px;border-radius:2px;text-decoration:none}
+  .btn-ghost:hover{background:var(--navy);color:var(--ivory)}
+  .talk-row{margin-top:34px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .fees-note{margin-top:16px;font-size:14.5px;color:var(--muted)}
 
   /* ---------- questions ---------- */
   details{border-top:1px solid var(--line)}
@@ -156,20 +185,25 @@
   .contact-line a{display:inline-flex;align-items:baseline;gap:10px;font-family:var(--sans);font-size:16px;font-weight:500;color:var(--ivory);text-decoration:none;white-space:nowrap}
   .contact-line a:hover{color:var(--gold)}
   .contact-line span{font-size:12.5px;color:rgba(245,241,232,.55)}
-  .foot-base{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:34px;font-size:13px;color:rgba(245,241,232,.55)}
+  .foot-loc{margin-top:20px;font-size:13.5px;color:rgba(245,241,232,.7)}
+  .foot-base{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:14px;font-size:13px;color:rgba(245,241,232,.55)}
 
   /* ---------- responsive ---------- */
   @media(max-width:880px){
     .hero{padding:56px 0 52px}
     .hero .cols{grid-template-columns:1fr;gap:40px}
     section{padding:60px 0}
-    .principle{grid-template-columns:1fr;gap:8px;padding:22px 0}
+    .practice-cols{grid-template-columns:1fr;gap:36px}
+    .ages{grid-template-columns:1fr}
+    .age{border-left:none;border-top:1px solid var(--line)}
+    .age:first-child{border-top:none}
+    .principles{grid-template-columns:1fr}
+    .science{grid-template-columns:1fr}
     .founder .inner{grid-template-columns:1fr;gap:30px}
-    .stage{grid-template-columns:52px 1fr;gap:14px}
-    .stage .desc{grid-column:2}
+    .tiers{grid-template-columns:1fr}
     .nav{flex-wrap:nowrap;align-items:center}
     .nav .link{display:none}
-    .btn-mobile{display:inline-block;font-size:14px;padding:9px 16px}
+    .btn-nav{font-size:13.5px;padding:9px 15px}
     .hero-photo{display:none}
     section,footer,#practice,#approach,#vanj,#engagements,#questions{scroll-margin-top:84px}
   }
@@ -188,7 +222,7 @@
     <a class="link" href="#vanj">About</a>
     <a class="link" href="#engagements">Engagements</a>
     <a class="link" href="#questions">Questions</a>
-    <a class="btn btn-mobile" href="https://telos-foundationyears.systeme.io/telosmasterclass" target="_blank" rel="noopener">Masterclass</a>
+    <a class="btn btn-nav" href="https://telos-foundationyears.systeme.io/telosmasterclass" target="_blank" rel="noopener">Reserve Masterclass</a>
   </div>
 </header>
 
@@ -198,13 +232,18 @@
 <div class="hero">
   <div class="wrap cols">
     <div>
-      <h1>The architecture of each child.</h1>
-      <p class="lead">Telos is an education and advisory practice for the foundation years — the stretch of schooling, from age eight, that everything later stands on. One child, one plan, built across a full academic horizon.</p>
+      <p class="eyebrow">The architecture of each child</p>
+      <h1>Thoughtful academic planning, starting at age eight.</h1>
+      <p class="lead">Telos is a boutique education and advisory practice for families in Dubai and worldwide. Working inside your child’s current British, IB, or American curriculum, we combine research-led academic coaching with long-term planning so curiosity, study habits, and direction grow together.</p>
       <div class="cta-row">
         <a class="btn" href="https://telos-foundationyears.systeme.io/telosmasterclass" target="_blank" rel="noopener">Save your spot at the masterclass</a>
         <a class="quiet" href="#practice">or read how the practice works</a>
       </div>
-      <p class="session-note">The masterclass is a session for parents, online and face to face, led by the founder.</p>
+      <div class="session-block">
+        <strong>Next parent masterclass</strong>
+        <span class="srow"><b>Online</b> — Saturday 28 November 2026 · 1:00 PM Dubai (9:00 AM GMT) · joining link sent to registered parents</span>
+        <span class="srow"><b>In person</b> — Saturday 5 December 2026 · 1:00 PM · Ibn Battuta Gate, Dubai · room details sent to registered parents</span>
+      </div>
     </div>
     <div class="hero-photo">
       <div class="photo-frame"><img src="hero-trajectory.jpg" alt=""></div>
@@ -214,12 +253,33 @@
 
 <!-- THE PRACTICE -->
 <section id="practice">
-  <div class="wrap prose">
+  <div class="wrap">
     <h2>Great futures are designed at the drawing board.</h2>
-    <p class="emph">The most transformative years in a child’s education are the foundation years — the formative stage when every possibility is within reach.</p>
-    <p>Telos partners with families in those pivotal years. We partner with parents and students to design a child’s pathway the way an architect designs a landmark: from the ground up, with a clear horizon in view, so every future milestone rests on a foundation that is thoughtful, resilient, and built to last.</p>
-    <p>In practice, that brings two disciplines together under one roof. Education: tailored academic guidance to strengthen your child’s core capabilities right inside the curriculum they already follow. Advisory: long-term planning alongside you, so every decision is guided by evidence, foresight, and the freedom of time.</p>
-    <p>Our advisory work is guided by the 21 Trajectories — Telos’s own map of the distinct futures a student can build toward. We begin with who your child is today, and plan toward the full horizon of where they can go.</p>
+    <div class="practice-cols">
+      <div class="prose">
+        <p class="emph">The most transformative years in a child’s education are the foundation years — the formative stage when every possibility is within reach.</p>
+        <p>Between ages eight and fourteen, children form the reading stamina, self-belief, and analytical habits that shape how smoothly they handle IGCSEs, IB, A-Levels, or senior school transitions. Yet most families wait until Year 11 to seek strategic advice, after key options have narrowed. Telos unites individualized academic coaching inside your child’s school curriculum with calm multi-year planning guided by our 21 Trajectories framework.</p>
+        <p>In practice, that brings two disciplines together under one roof. Education: tailored academic guidance to strengthen your child’s core capabilities right inside the curriculum they already follow. Advisory: long-term planning alongside you, so every decision is guided by evidence, foresight, and the freedom of time.</p>
+      </div>
+      <div>
+        <div class="traj-card">
+          <h3>The 21 Trajectories</h3>
+          <p class="sub">Telos’s own map of the distinct futures a student can build toward</p>
+          <div class="traj-row"><span>Quantitative &amp; Engineering</span><div class="dots"><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="traj-row"><span>Literary &amp; Policy Inquiry</span><div class="dots"><i></i><i></i><i></i><i></i></div></div>
+          <div class="traj-row"><span>Life Sciences</span><div class="dots"><i></i><i></i><i></i><i></i></div></div>
+          <div class="traj-row"><span>Creative Design</span><div class="dots"><i></i><i></i><i></i><i></i></div></div>
+          <div class="traj-row"><span>Enterprise</span><div class="dots"><i></i><i></i><i></i><i></i></div></div>
+          <p class="traj-total">21 pathways across five domains — mapped from who your child is today</p>
+        </div>
+        <p class="traj-cap">The map guides exploration. It never boxes a child into a career early — it shows parents the breadth a strong foundation keeps open.</p>
+      </div>
+    </div>
+    <div class="ages">
+      <div class="age"><b>Ages 8–10</b><span>Curiosity &amp; study habits</span></div>
+      <div class="age"><b>Ages 11–13</b><span>Depth &amp; independent ownership</span></div>
+      <div class="age"><b>Ages 14+</b><span>Pathway &amp; senior school readiness</span></div>
+    </div>
   </div>
 </section>
 
@@ -234,18 +294,31 @@
       </div>
       <div class="principle">
         <h3>Structure before speed</h3>
-        <p>We plan for the full arc of the foundation years because true progress is the kind that builds on itself—turning today’s steady habits into tomorrow’s lasting strengths.</p>
+        <p>We plan for the full arc of the foundation years because true progress is the kind that builds on itself — turning today’s steady habits into tomorrow’s lasting strengths.</p>
       </div>
       <div class="principle">
         <h3>Evidence made visible</h3>
-        <p>Feedback and a portfolio that show a child where they stand, with guidance as they choose their next pathways.</p>
+        <p>After every session, parents receive brief written notes explaining what we practiced and how to reinforce it at home. Each term, your child updates a visible portfolio tracking mastery, reading depth, and personal-best goals.</p>
       </div>
       <div class="principle">
         <h3>One architecture per child</h3>
         <p>Every plan is drawn for a single child, their strengths, and the horizon they’re building toward.</p>
       </div>
     </div>
-    <p class="method-note">The method leans on the learning-science and formative-assessment literature — Dylan Wiliam and John Hattie among the touchstones — and on years of classroom practice.</p>
+    <div class="science">
+      <div class="sci-panel">
+        <h3>Grounded in learning science</h3>
+        <p>Our feedback methods draw on formative-assessment research by Dylan Wiliam and John Hattie, prioritizing specific next-step guidance that protects student agency rather than grade anxiety. Progress is made visible to the child — so they learn to see, and steer, their own next step.</p>
+      </div>
+      <div class="pf-card">
+        <p class="tag">What the portfolio holds</p>
+        <h3>Inside a Telos student portfolio</h3>
+        <p class="pf-line"><b>Termly progress note</b> — what we practiced, and how to reinforce it at home</p>
+        <p class="pf-line"><b>Mastery tracker</b> — curriculum topics, from emerging to secure</p>
+        <p class="pf-line"><b>Reading depth log</b> — titles, level, and stamina over time</p>
+        <p class="pf-line"><b>Personal-best goals</b> — set with the student, reviewed each term</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -269,43 +342,53 @@
 <section id="engagements">
   <div class="wrap">
     <h2>Three ways to work with Telos.</h2>
-    <p style="margin-bottom:34px;color:var(--muted)">Each engagement builds on the one before it — from first conversation to sustained oversight across the foundation years.</p>
+    <p style="margin-bottom:34px;color:var(--muted)">Each engagement builds on the one before it, from first conversation to sustained guidance across the foundation years.</p>
 
-    <div class="stage">
-      <div class="num">1</div>
-      <div>
-        <h3>Masterclass</h3>
-        <span class="role">the drawing board</span>
+    <div class="tiers">
+      <div class="tier">
+        <p class="lvl">Begin here</p>
+        <h3>Parent Masterclass</h3>
+        <p class="when">Online: Sat 28 Nov · 1:00 PM Dubai<br>In person: Sat 5 Dec · 1:00 PM · Ibn Battuta Gate</p>
+        <ul class="deliv">
+          <li>A research-grounded view of the foundation years</li>
+          <li>The 21 Trajectories: the paths a child can build toward</li>
+          <li>A 90-day plan your child can start with</li>
+        </ul>
+        <p class="act"><a class="btn" href="https://telos-foundationyears.systeme.io/telosmasterclass" target="_blank" rel="noopener">Reserve your spot</a></p>
       </div>
-      <div class="desc">
-        <p>An open session where families meet the approach — an hour that reframes how the foundation years are planned. The place to begin.</p>
-        <p class="act"><a class="btn" href="https://telos-foundationyears.systeme.io/telosmasterclass" target="_blank" rel="noopener">Save your spot</a></p>
+
+      <div class="tier">
+        <p class="lvl">Go deeper</p>
+        <h3>Strategic Diagnostic Audit</h3>
+        <p class="when">One child, one in-depth review</p>
+        <ul class="deliv">
+          <li>A one-to-one review of learning habits and strengths</li>
+          <li>Your child’s place on the 21 Trajectories map</li>
+          <li>A written 12-month priority plan</li>
+          <li>A 60-minute parent debrief</li>
+        </ul>
+        <p class="act"><a class="btn-ghost" href="mailto:telos.foundationyears@gmail.com?subject=Strategic%20Diagnostic%20Audit">Request an audit</a></p>
+      </div>
+
+      <div class="tier">
+        <p class="lvl">Stay the course</p>
+        <h3>Ongoing Advisory Retainer</h3>
+        <p class="when">Individual guidance, term after term</p>
+        <ul class="deliv">
+          <li>Weekly or biweekly one-to-one coaching</li>
+          <li>Brief parent notes after every session</li>
+          <li>A living student portfolio, updated across the term</li>
+          <li>Termly curriculum and pathway reviews</li>
+        </ul>
+        <p class="act"><a class="btn-ghost" href="mailto:telos.foundationyears@gmail.com?subject=Advisory%20Retainer%20enquiry">Enquire for next term</a></p>
       </div>
     </div>
 
-    <div class="stage">
-      <div class="num">2</div>
-      <div>
-        <h3>Strategic Audit</h3>
-        <span class="role">the survey</span>
-      </div>
-      <div class="desc">
-        <p>A one-on-one assessment of your child’s current strengths and the areas ready for reinforcement — a thorough survey of the ground before the first stone is laid.</p>
-      </div>
+    <div class="talk-row">
+      <a class="btn" href="https://wa.me/971504285733" target="_blank" rel="noopener">WhatsApp Vanj</a>
+      <a class="btn-ghost" href="mailto:telos.foundationyears@gmail.com?subject=Intro%20call">Request a 15-minute intro call</a>
     </div>
-
-    <div class="stage">
-      <div class="num">3</div>
-      <div>
-        <h3>Cohort Retainer</h3>
-        <span class="role">the build</span>
-      </div>
-      <div class="desc">
-        <p>Ongoing architectural oversight across the foundation years — sustained, individual guidance as the structure goes up, term after term.</p>
-      </div>
-    </div>
-
-    <p class="fees-note">Have questions about fit or fees? <a href="#contact">Write or call</a>, and you will reach Vanj directly.</p>
+    <p class="fees-note">Questions about fit or fees? Write or call, and you will reach Vanj directly — every engagement comes with a written proposal before any commitment.</p>
 
   </div>
 </section>
@@ -316,7 +399,7 @@
     <h2>Questions parents ask</h2>
     <details>
       <summary>What is Telos?</summary>
-      <p class="a">Telos brings education and advisory together in one place—academic support to build your child’s core capabilities, paired with long-term planning for your family. Most families use both, because each makes the other stronger.</p>
+      <p class="a">Telos brings education and advisory together in one place — academic support to build your child’s core capabilities, paired with long-term planning for your family. Most families use both, because each makes the other stronger.</p>
     </details>
     <details>
       <summary>What age does Telos start?</summary>
@@ -324,15 +407,31 @@
     </details>
     <details>
       <summary>Which curriculum does it follow?</summary>
-      <p class="a">Yours. Every plan is designed around the curriculum your child is already studying. The architecture is built around the child, not the syllabus.</p>
+      <p class="a">Yours. Whether your child attends a British (Key Stages 2–5, IGCSE, A-Level), IB (PYP, MYP, DP), or American (Common Core, AP) school in Dubai or abroad, we align every session and portfolio milestone directly with their current coursework so support strengthens school performance rather than adding parallel pressure.</p>
+    </details>
+    <details>
+      <summary>How is Telos different from a subject tutor?</summary>
+      <p class="a">A tutor fixes this week’s topic. Telos coaches the capabilities underneath — reading stamina, study habits, analytical writing — inside your child’s own curriculum, and pairs that coaching with multi-year planning, so each term builds toward a larger direction rather than the next test alone.</p>
+    </details>
+    <details>
+      <summary>Are you independent of schools?</summary>
+      <p class="a">Yes. Telos advises on schools, programmes, and pathways on merit alone, and accepts no commissions from any school or provider.</p>
+    </details>
+    <details>
+      <summary>How are fees structured?</summary>
+      <p class="a">Plainly, and in writing. Before any engagement begins you receive a written proposal setting out the full scope and fee, and nothing starts until you approve it.</p>
+    </details>
+    <details>
+      <summary>What safeguarding standards do you follow?</summary>
+      <p class="a">Telos works in line with Dubai’s KHDA learner-protection expectations: student coaching runs on transparent, parent-visible channels, WhatsApp stays parent-facing only, and parents receive a brief note after every session.</p>
     </details>
     <details>
       <summary>Where do sessions happen?</summary>
-      <p class="a">Live online over video—so we can work together wherever your family is in the world—as well as face-to-face in Dubai.</p>
+      <p class="a">Live online over video — so we can work together wherever your family is in the world — as well as face-to-face in Dubai.</p>
     </details>
     <details>
       <summary>How do we begin?</summary>
-      <p class="a">Start with the masterclass—a live session for parents on how to plan the foundation years with clarity. Families who want to go deeper can book a Strategic Audit afterward.</p>
+      <p class="a">Start with the masterclass — a live session for parents on how to plan the foundation years with clarity. Families who want to go deeper can book a Strategic Diagnostic Audit afterward.</p>
     </details>
   </div>
 </section>
@@ -348,6 +447,7 @@
       <a href="https://wa.me/971504285733" target="_blank" rel="noopener"><span>Phone · WhatsApp</span>+971 50 428 5733</a>
       <a href="https://instagram.com/telosfoundationyears" target="_blank" rel="noopener"><span>Instagram</span>@telosfoundationyears</a>
     </div>
+    <p class="foot-loc">Dubai, UAE · Serving families online worldwide</p>
     <div class="foot-base">
       <span>© 2026 Telos Foundation Years</span>
       <span>The architecture of each child.</span>
