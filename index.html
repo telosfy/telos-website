@@ -116,15 +116,15 @@
   .age span{font-size:14px;color:var(--muted)}
 
   /* ---------- approach: 2x2 grid + science + portfolio ---------- */
-  .principles{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-  .principle{background:#FCFBF7;border:1px solid var(--line);border-radius:3px;padding:24px 26px}
+  .principles{display:grid;grid-template-columns:1fr 1fr;gap:42px 56px}
+  .principle{border-top:2px solid var(--gold);padding-top:20px}
   .principle h3{font-size:21px;margin-bottom:10px}
   .principle p{color:var(--ink);font-size:15.5px}
-  .science{margin-top:34px;display:grid;grid-template-columns:3fr 2fr;gap:24px;align-items:stretch}
-  .sci-panel{border-left:2px solid var(--gold);background:#FCFBF7;padding:24px 28px}
+  .science{margin-top:56px;display:grid;grid-template-columns:3fr 2fr;background:#fff;border:1px solid var(--line);border-radius:3px}
+  .sci-panel{padding:32px 36px;align-self:center}
   .sci-panel h3{font-size:19px;margin-bottom:10px}
   .sci-panel p{font-size:15.5px}
-  .pf-card{background:#fff;border:1px solid var(--line);border-radius:3px;padding:22px 24px}
+  .pf-card{border-left:1px solid var(--line);padding:26px 28px}
   .pf-card .tag{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
   .pf-card h3{font-size:18px;margin:6px 0 10px}
   .pf-line{font-size:14px;padding:9px 0;border-top:1px dashed var(--line)}
@@ -194,8 +194,9 @@
     .ages{grid-template-columns:1fr}
     .age{border-left:none;border-top:1px solid var(--line)}
     .age:first-child{border-top:none}
-    .principles{grid-template-columns:1fr}
+    .principles{grid-template-columns:1fr;gap:30px}
     .science{grid-template-columns:1fr}
+    .pf-card{border-left:none;border-top:1px solid var(--line)}
     .founder .inner{grid-template-columns:1fr;gap:30px}
     .tiers{grid-template-columns:1fr}
     .nav{flex-wrap:nowrap;align-items:center}
