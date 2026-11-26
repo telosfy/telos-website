@@ -109,13 +109,16 @@
   /* ---------- founder ---------- */
   .founder{background:var(--navy);color:var(--ivory);border-top:none}
   .founder h2{color:var(--ivory)}
-  .founder .inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
-  .founder p{color:rgba(245,241,232,.88)}
+  .founder .inner{display:grid;grid-template-columns:2fr 3fr;gap:68px;align-items:center}
+  .founder p{color:#EAE6DF;font-size:16.5px;line-height:1.7}
+  .founder .eyebrow{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:0 0 10px}
   .founder p + p{margin-top:18px}
   .signature{margin-top:30px;font-family:var(--serif);font-style:italic;font-size:30px;color:var(--gold)}
-  .founder .rule{width:44px;height:2px;background:var(--gold);margin-bottom:26px}
-  .portrait{max-width:380px;margin-top:34px}
-  .portrait img{width:100%;height:auto;display:block}
+  .founder .rule{width:44px;height:2px;background:var(--gold);margin-bottom:16px}
+  .founder .sig-cred{margin-top:8px;font-family:var(--sans);font-size:13.5px;letter-spacing:.02em;color:rgba(245,241,232,.6)}
+  .portrait{position:relative;margin:0}
+  .portrait::before{content:"";position:absolute;inset:0;transform:translate(-11px,11px);border:1px solid rgba(201,165,95,.5);border-radius:5px}
+  .portrait img{position:relative;width:100%;height:auto;display:block;border-radius:5px}
 
   /* ---------- engagements ---------- */
   .stage{
@@ -248,15 +251,15 @@
 <!-- FOUNDER -->
 <section class="founder" id="vanj">
   <div class="wrap inner">
+    <div class="portrait"><img src="vanj-portrait-v3.jpg" alt="Vanj de Guzman, founder of Telos Foundation Years"></div>
     <div>
       <div class="rule"></div>
+      <p class="eyebrow">Founder</p>
       <h2>The person behind Telos</h2>
-      <div class="portrait"><img src="vanj-portrait-v2.png" alt="Vanj de Guzman, founder of Telos Foundation Years"></div>
-    </div>
-    <div>
-      <p>My career has been built from the inside of leading schools. I have taught in the classrooms of Dubai and the Philippines, served in school leadership and administration, and mentored students one-to-one across the globe—both online and in person. That hands-on experience is grounded in a Master’s in School Administration and a Postgraduate Diploma in Education.</p>
+      <p>My career has been built from the inside of leading schools. I have taught in the classrooms of Dubai and the Philippines, served in school leadership and administration, and mentored students one-to-one across the globe — both online and in person. That hands-on experience is grounded in a Master’s in School Administration and a Postgraduate Diploma in Education.</p>
       <p>Telos comes out of a pattern: most children who thrived later were the ones whose foundations were built on purpose. I started this practice to do that building deliberately — grounded in research, and given the patience the foundation years deserve.</p>
       <p class="signature">— Vanj</p>
+      <p class="sig-cred">Founder, Telos · M.A. School Administration, PGDE</p>
     </div>
   </div>
 </section>
